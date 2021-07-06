@@ -1,0 +1,82 @@
+<div class="card mt-5 border-0">
+    <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Email</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock Level</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pdata of productData">
+                <td>{{pdata.name}}</td>
+                <td>{{pdata.sku}}</td>
+                <td>{{pdata.email}}</td>
+                <td>{{pdata.description}}</td>
+                <td>{{pdata.price}}</td>
+                <td>{{pdata.stock_level}}</td>
+                <td>
+                   <button type="button" (click)="onEdit(pdata)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn"><i class="material-icons">edit</i></button>
+                   <button type="button" (click)="deleteProduct(pdata)" class="btn"><i class="material-icons">delete</i></button>
+                </td>
+              </tr>
+             </tbody>
+          </table>
+
+          
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title fw-bold" id="exampleModalLabel">Product Details</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" formControlName="name"  class="form-control" id="name">
+            
+          </div>
+          <div class="mb-3">
+            <label for="sku" class="form-label">SKU</label>
+            <input type="text" formControlName="sku"  class="form-control" id="sku">
+          </div>
+          <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" formControlName="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <input type="text" formControlName="description" class="form-control" id="description">
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="number" formControlName="price" class="form-control" id="price">
+            </div>
+            <div class="mb-3">
+              <label for="stock_level" class="form-label">Stock Level</label>
+              <input type="number" formControlName="stock_level"  class="form-control" id="stock_level">
+            </div>
+               
+          </form>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="updateProductDetails()" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

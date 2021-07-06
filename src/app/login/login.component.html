@@ -1,0 +1,29 @@
+<mat-toolbar class="bgcolor">
+  <div>
+   <h4>Angular My App</h4>
+   </div>
+   <div class="spacer"></div>
+   <ul class="nav">
+       <li> <a mat-button routerLink="/">Sign Up</a></li>
+    </ul>
+   
+</mat-toolbar>
+
+
+<mat-card class="mt-5 w-25 h-50 mx-auto pt-5 ">
+  <h1 class="fw-bold">Login Form </h1>
+    <form class="align-middle">
+        <div class="mb-3">
+          <label for="email" class="form-label">User Name</label>
+          <input type="email" class="form-control" id="email" >
+          
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="passwrod">
+        </div>
+       <div>
+        <button type="submit" (click)="onSubmit()" class="btn btn-color">Submit</button>
+        </div>
+      </form>
+</mat-card>

@@ -1,0 +1,12 @@
+.btn-color{
+    background-color: indigo;
+    color: #ddd;
+}
+
+.width{
+    width: 100%;
+}
+
+.border{
+    border-left: 2px solid #aaaa;
+}
